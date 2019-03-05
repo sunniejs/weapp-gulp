@@ -1,0 +1,8 @@
+<!--src/components/s-login/index.wxml-->
+<text>src/components/s-login/index.wxml</text>
+<view>
+	<image src="%ASSETS_IMG%/weapp-worfkflow@2x.jpg" mode="widthFix" class="index__banner-img"></image>
+</view>
+<view>
+	<image src="%ASSETS_IMG%/weapp-worfkflow@2x.jpg" mode="widthFix" class="index__banner-img"></image>
+</view>

@@ -1,0 +1,14 @@
+{
+	"client": "dist/",
+	"svr": "server/",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "wx964c60a9f3689cdf",
+	"projectname": "weapp-gulp",
+	"condition": {}
+}

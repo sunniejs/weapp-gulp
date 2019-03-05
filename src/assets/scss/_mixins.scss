@@ -1,0 +1,22 @@
+/**
+ * ------------------------------------------------------------------
+ * Sass Minxins
+ * ------------------------------------------------------------------
+ *
+ * @author  sunnie
+ * @link    https://github.com/sunnie1992/weapp-gulp
+ * @data    2019-03-05
+ */
+
+// 超过行数 文字截取
+@mixin textoverflow($clamp:1) {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $clamp;
+    /*! autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+}
