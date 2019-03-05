@@ -1,19 +1,16 @@
 
 ## weapp gulp 简介
 
-根据 > [WeApp-Workflow](https://github.com/sunnie/WeApp-Workflow)修改
+根据[WeApp-Workflow](https://github.com/sunnie/WeApp-Workflow) 修改
 
 ## 介绍
 
 拥有 WeApp-Workflow 的主要功能
 删除了雪碧图，保留了 SCSS 实时编译为 WXSS,图片压缩
 
- 
-
-### 新增 图片上传七牛云cdn
+## 新增 图片上传七牛云cdn
 
 优化相对路径的图片引用，gulp复制文件和替换%ASSETS_IMG%/冲突，导致保存文件时小程序报错
-
  
 ## 开始使用
 
