@@ -59,7 +59,7 @@ gulp
 
 ## 案例展示
 
-![devework+微信小程序](src/assets/images/qr.jpg)
+![devework+微信小程序](src/assets/images/qr.png)
 
 ## 鸣谢
 
