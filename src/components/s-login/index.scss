@@ -1,1 +1,13 @@
 /* src/components/s-login/index.wxss */
+
+.container {
+    padding: 50rpx 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+        margin-top: 30rpx;
+        font-size: 42px;
+        font-weight: 400;
+    }
+}

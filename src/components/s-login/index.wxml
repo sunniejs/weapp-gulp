@@ -1,8 +1,5 @@
 <!--src/components/s-login/index.wxml-->
-<text>src/components/s-login/index.wxml</text>
-<view>
-	<image src="%ASSETS_IMG%/weapp-worfkflow@2x.jpg" mode="widthFix" class="index__banner-img"></image>
-</view>
-<view>
-	<image src="%ASSETS_IMG%/weapp-worfkflow@2x.jpg" mode="widthFix" class="index__banner-img"></image>
+<view class="container">
+	<image mode="aspectFit" src="%ASSETS_IMG%/logo.png"></image>
+	<view class='title'>Soul Weapp</view>
 </view>

@@ -12,6 +12,9 @@
     "url": "git+https://github.com/sunnie/weapp-gulp.git"
   },
   "keywords": [
+    "weapp-gulp",
+    "小程序gulp",
+    "脚手架",
     "gulp",
     "gulpjs",
     "workflow",
