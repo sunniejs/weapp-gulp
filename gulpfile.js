@@ -17,10 +17,12 @@ var del = require('del')
 var replace = require('gulp-replace')
 var qiniu = require('gulp-qiniu')
 var gulpif = require('gulp-if')
+var postcss = require('gulp-postcss')
 var gutil = require('gulp-util')
 var newer = require('gulp-newer')
 var cache = require('gulp-cached')
 var debug = require('gulp-debug')
+var pxtorpx = require('postcss-px2rpx')
 var argv = require('yargs').argv
 var config = null
 
@@ -111,6 +113,7 @@ function sassCompile() {
       )
     )
     .pipe(gulpif(Boolean(argv.debug), debug({ title: '`sassCompile` Debug:' })))
+    .pipe(postcss([pxtorpx()]))
     .pipe(
       rename({
         extname: '.wxss'
@@ -118,7 +121,6 @@ function sassCompile() {
     )
     .pipe(replace('.scss', '.wxss'))
     .pipe(replace('%ASSETS_IMG%/', res))
-    .pipe(replace('src/assets/images', res)) // 雪碧图CSS RUL 中的图片路径
     .pipe(gulp.dest(paths.dist.baseDir))
 }
 
@@ -147,7 +149,6 @@ function jsImgRewrite() {
     .pipe(replace('%ASSETS_IMG%/', res))
     .pipe(gulp.dest(paths.dist.baseDir))
 }
-
 
 // clean 任务, dist 目录
 function cleanDist() {
@@ -229,7 +230,7 @@ var watchHandler = function(type, file) {
       var tmp = file.replace('src/', 'dist/')
       del([tmp])
     } else {
-     jsImgRewrite()
+      jsImgRewrite()
     }
   } else {
     // 其余文件
@@ -273,7 +274,7 @@ gulp.task(
     cleanTmp,
     copyBasicFiles,
     // gulp.parallel(sassCompile, imageMin, copyWXML), // 不需要%ASSETS_IMG%/重写
-    gulp.parallel(sassCompile, imageMin, wxmlImgRewrite,jsImgRewrite), // 需要%ASSETS_IMG%/重写
+    gulp.parallel(sassCompile, imageMin, wxmlImgRewrite, jsImgRewrite), // 需要%ASSETS_IMG%/重写
     assetsImgMin,
     qiniuCDN,
     watch
@@ -287,7 +288,7 @@ gulp.task(
     cleanTmp,
     copyBasicFiles,
     // gulp.parallel(sassCompile, imageMin, copyWXML), // 不需要%ASSETS_IMG%/重写
-    gulp.parallel(sassCompile, imageMin, wxmlImgRewrite,jsImgRewrite), // 需要%ASSETS_IMG%/重写
+    gulp.parallel(sassCompile, imageMin, wxmlImgRewrite, jsImgRewrite), // 需要%ASSETS_IMG%/重写
     assetsImgMin,
     qiniuCDN
   )
