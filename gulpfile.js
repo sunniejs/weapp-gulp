@@ -45,7 +45,7 @@ var paths = {
     imgFiles: 'src/image/**/*',
     scssFiles: 'src/**/*.scss',
     baseFiles: [
-      'src/**/*.{png,js,json}',
+      'src/**/*.{png,json,wxs}',
       '!src/assets/**/*',
       '!src/image/**/*'
     ],
@@ -140,6 +140,15 @@ function wxmlImgRewrite() {
     .pipe(gulp.dest(paths.dist.baseDir))
 }
 
+function jsImgRewrite() {
+  var res = config.assetsCDN + config.qiniu.prefix + '/'
+  return gulp
+    .src(paths.src.jsFiles)
+    .pipe(replace('%ASSETS_IMG%/', res))
+    .pipe(gulp.dest(paths.dist.baseDir))
+}
+
+
 // clean 任务, dist 目录
 function cleanDist() {
   return del(paths.dist.baseDir)
@@ -203,6 +212,7 @@ var watchHandler = function(type, file) {
       assetsImgMin()
       qiniuCDN()
       wxmlImgRewrite()
+      jsImgRewrite()
     }
   } else if (extname === '.wxml') {
     // wxml
@@ -212,6 +222,14 @@ var watchHandler = function(type, file) {
     } else {
       // copyWXML()
       wxmlImgRewrite()
+    }
+  } else if (extname === '.js') {
+    // wxml
+    if (type === 'removed') {
+      var tmp = file.replace('src/', 'dist/')
+      del([tmp])
+    } else {
+     jsImgRewrite()
     }
   } else {
     // 其余文件
@@ -255,7 +273,7 @@ gulp.task(
     cleanTmp,
     copyBasicFiles,
     // gulp.parallel(sassCompile, imageMin, copyWXML), // 不需要%ASSETS_IMG%/重写
-    gulp.parallel(sassCompile, imageMin, wxmlImgRewrite), // 需要%ASSETS_IMG%/重写
+    gulp.parallel(sassCompile, imageMin, wxmlImgRewrite,jsImgRewrite), // 需要%ASSETS_IMG%/重写
     assetsImgMin,
     qiniuCDN,
     watch
@@ -269,7 +287,7 @@ gulp.task(
     cleanTmp,
     copyBasicFiles,
     // gulp.parallel(sassCompile, imageMin, copyWXML), // 不需要%ASSETS_IMG%/重写
-    gulp.parallel(sassCompile, imageMin, wxmlImgRewrite), // 需要%ASSETS_IMG%/重写
+    gulp.parallel(sassCompile, imageMin, wxmlImgRewrite,jsImgRewrite), // 需要%ASSETS_IMG%/重写
     assetsImgMin,
     qiniuCDN
   )
