@@ -1,7 +1,7 @@
 
 ## weapp gulp 简介
 
-根据[WeApp-Workflow](https://github.com/sunnie/WeApp-Workflow) 修改
+根据[WeApp-Workflow](https://github.com/Jeff2Ma/WeApp-Workflow) 修改
 
 ## 介绍
 
