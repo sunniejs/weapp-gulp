@@ -60,7 +60,7 @@ gulp
 
 ## 鸣谢
 
-  [WeApp-Workflow](https://github.com/sunnie/WeApp-Workflow)
+  [WeApp-Workflow](https://github.com/Jeff2Ma/WeApp-Workflow)
 
 ## 意见反馈
 
