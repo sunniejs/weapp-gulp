@@ -34,9 +34,9 @@ service.interceptors.use({
 			if (res.status === 401) {
 				// wx.removeStorageSync('utoken')
 			} else {
-				wx.showToast({ title: res.info || 'error', icon: 'none' })
+				wx.showToast({ title: res.message || 'error', icon: 'none' })
 			}
-			return Promise.reject(res.info || 'error')
+			return Promise.reject(res.message || 'error')
 		} else {
 			return res
 		}
