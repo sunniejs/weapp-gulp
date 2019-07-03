@@ -10,5 +10,7 @@
 	},
 	"appid": "wx964c60a9f3689cdf",
 	"projectname": "weapp-gulp",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {}
 }

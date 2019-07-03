@@ -1,0 +1,10 @@
+// 支持文件
+@import '../../assets/scss/support';
+.list {
+  display: flex;
+  flex-direction: column;
+  .item {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="app">
+	<!--components-->
+ <view>
+   <view>
+     您可以扫描添加下方的微信并备注 Soul 加交流群
+   </view>
+ 	<image mode="aspectFit" src="{{appInfo.wechat}}"></image>
+ </view>
+	<view class="list">
+  	<view class="item">项目名: {{appInfo.name}}</view>
+		<view class="item">项目地址: {{appInfo.github}}</view>
+		<view class="item">项目作者: {{appInfo.author}}</view>
+	</view>
+</view>

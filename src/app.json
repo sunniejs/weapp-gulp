@@ -1,9 +1,29 @@
 {
-  "pages": ["pages/index/index"],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "weapp-gulp",
-    "navigationBarTextStyle": "black"
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/request/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "weapp-gulp",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#15AAF8",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [{
+            "pagePath": "pages/index/index",
+            "iconPath": "image/home_d.png",
+            "selectedIconPath": "image/home.png",
+            "text": "首页"
+        }, {
+            "pagePath": "pages/request/index",
+            "iconPath": "image/me_d.png",
+            "selectedIconPath": "image/me.png",
+            "text": "请求"
+        }]
+    }
 }

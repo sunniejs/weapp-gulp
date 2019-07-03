@@ -6,7 +6,5 @@ Page({
 		motto: 'Hello World',
 		userInfo: {}
 	},
-	onLoad: function () {
-
-	},
-});
+	onLoad: function() {}
+})
