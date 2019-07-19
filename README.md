@@ -18,7 +18,7 @@
 
 ### 安装
 
-0、请先全局按照 Gulp-cli
+0、请先全局安装 Gulp-cli
 
 ```
 npm install gulp-cli -g
