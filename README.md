@@ -55,9 +55,7 @@ gulp
 
 其余任务：`gulp clean`：清除`dist`，`tmp`文件夹。
 
-## 案例展示
-
-![devework+微信小程序](src/assets/images/qr.png)
+ 
 
 ## 鸣谢
 
