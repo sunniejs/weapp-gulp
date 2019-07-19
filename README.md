@@ -40,6 +40,8 @@ rm -rf .git
 3、安装必要模块
 
 ```
+npm install 
+// or
 npm i
 ```
 
