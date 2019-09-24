@@ -3,7 +3,7 @@
 	<!--components-->
  <view>
    <view>
-     您可以扫描添加下方的微信并备注 Soul 加交流群
+     您可以扫描添加下方的微信并备注 Sol 加交流群
    </view>
  	<image mode="aspectFit" src="{{appInfo.wechat}}"></image>
  </view>

@@ -1,5 +1,5 @@
 <!--src/components/s-login/index.wxml-->
 <view class="container">
-	<image mode="aspectFit" src="%ASSETS_IMG%/logo.png"></image>
-	<view class='title'>Soul Weapp</view>
+	<image mode="aspectFit" src="%CDN_IMG%/logo.png"></image>
+	<view class='title'>Sol Weapp</view>
 </view>

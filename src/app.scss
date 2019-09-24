@@ -10,10 +10,10 @@
  */
 
 // 支持文件
-@import "assets/scss/support";
+@import 'assets/scss/support';
 
 .test {
-	background-image: url(%ASSETS_IMG%/qr-r.jpg);
+	background-image: url(%CDN_IMG%/qr-r.jpg);
 }
 
 .app {

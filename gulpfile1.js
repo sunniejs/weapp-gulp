@@ -111,7 +111,7 @@ function sassCompile() {
 			})
 		)
 		.pipe(replace('.scss', '.wxss'))
-		.pipe(replace('%ASSETS_IMG%/', res))
+		.pipe(replace('%CDN_IMG%/', res))
 		.pipe(gulp.dest(paths.dist.baseDir))
 }
 
@@ -124,12 +124,12 @@ function copyBasicFiles() {
 function copyWXML() {
 	return gulp.src(paths.src.wxmlFiles, {}).pipe(gulp.dest(paths.dist.baseDir))
 }
-// 重写WXML 中 image 标签中的图片路径, 不能与copyWXML 一起使用，需要%ASSETS_IMG%/重写则注释调用copyWXML
+// 重写WXML 中 image 标签中的图片路径, 不能与copyWXML 一起使用，需要%CDN_IMG%/重写则注释调用copyWXML
 function wxmlImgRewrite() {
 	var res = config.assetsCDN + config.qiniu.prefix + '/'
 	return gulp
 		.src(paths.src.wxmlFiles)
-		.pipe(replace('%ASSETS_IMG%/', res))
+		.pipe(replace('%CDN_IMG%/', res))
 		.pipe(gulp.dest(paths.dist.baseDir))
 }
 
@@ -137,7 +137,7 @@ function jsImgRewrite() {
 	var res = config.assetsCDN + config.qiniu.prefix + '/'
 	return gulp
 		.src(paths.src.jsFiles)
-		.pipe(replace('%ASSETS_IMG%/', res))
+		.pipe(replace('%CDN_IMG%/', res))
 		.pipe(gulp.dest(paths.dist.baseDir))
 }
 
@@ -257,8 +257,8 @@ gulp.task(
 	gulp.series(
 		//  cleanTmp,
 		copyBasicFiles,
-		// gulp.parallel(sassCompile, imageMin, copyWXML), // 不需要%ASSETS_IMG%/重写
-		gulp.parallel(sassCompile, imageMin, wxmlImgRewrite, jsImgRewrite), // 需要%ASSETS_IMG%/重写
+		// gulp.parallel(sassCompile, imageMin, copyWXML), // 不需要%CDN_IMG%/重写
+		gulp.parallel(sassCompile, imageMin, wxmlImgRewrite, jsImgRewrite), // 需要%CDN_IMG%/重写
 		assetsImgMin,
 		qiniuCDN,
 		watch
@@ -271,8 +271,8 @@ gulp.task(
 	gulp.series(
 		//  cleanTmp,
 		copyBasicFiles,
-		// gulp.parallel(sassCompile, imageMin, copyWXML), // 不需要%ASSETS_IMG%/重写
-		gulp.parallel(sassCompile, imageMin, wxmlImgRewrite, jsImgRewrite), // 需要%ASSETS_IMG%/重写
+		// gulp.parallel(sassCompile, imageMin, copyWXML), // 不需要%CDN_IMG%/重写
+		gulp.parallel(sassCompile, imageMin, wxmlImgRewrite, jsImgRewrite), // 需要%CDN_IMG%/重写
 		assetsImgMin,
 		qiniuCDN
 	)
