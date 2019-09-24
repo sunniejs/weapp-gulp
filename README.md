@@ -78,6 +78,7 @@ npm run build
 ## 鸣谢
 
 [WeApp-Workflow](https://github.com/Jeff2Ma/WeApp-Workflow)
+[wx-extend](https://github.com/skyvow/wx-extend)
 
 ## 意见反馈
 
